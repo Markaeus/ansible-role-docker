@@ -1,0 +1,17 @@
+---
+- name: Install Docker
+    command: curl -fsSL https://test.docker.com -o test-docker.sh
+
+- name: Create motion group
+    group:
+      name: "motion"
+      state: present
+
+- name: Create motion user
+    user:
+      name: "motion"
+      state: present
+- name: make store folder
+    file:
+      path: ~/surv
+      state: directory
